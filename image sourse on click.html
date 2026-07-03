@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>image sourse</title>
+
+	<style>
+		
+		body {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			text-align: center;
+		}
+
+		button {
+			background-color: royalblue;
+			color: white;
+			border: none;
+			width: 200px;
+			height: 30px;
+			border-radius: 5px;
+		}
+
+		button:hover {
+			background-color: transparent;
+			color: royalblue;
+			border: 1px solid royalblue;
+			transition: 0.5s;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<img src="https://i.pinimg.com/1200x/43/16/60/4316602d5ed1c62195ffd7fd86f7af02.jpg" width="200px" id="cr7">
+		<br> <br>
+		<button type="button" onclick="show()">Show Image Sourse</button>
+
+		<p id="txt"></p>
+
+	</div>
+
+	<script>
+		
+		function show() {
+
+			let img = document.getElementById('cr7').src;
+			document.getElementById('txt').innerHTML = img;
+		}
+
+	</script>
+
+</body>
+</html>
