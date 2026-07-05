@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+		
+		button {
+			background-color: royalblue;
+			color: white;
+			border: none;
+			width: 100px;
+			height: 30px;
+			border-radius: 5px;
+		}
+
+		button:hover {
+			background-color: transparent;
+			color: royalblue;
+			border: 1px solid royalblue;
+			transition: 0.5s;
+		}
+
+		p {
+			width: 500px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<button type="button" onclick="show()">Click Here</button>
+	<p id="txt"></p>
+
+	<script>
+		
+		function show() {
+
+			document.getElementById('txt').innerHTML = "MashupStack is a dedicated software training company committed to shaping the next generation of skilled developers. With our offline training centers in Kochi and Trivandrum, we offer immersive, hands-on learning experiences that prepare students for real-world tech careers."
+		}
+
+	</script>
+
+</body>
+</html>
