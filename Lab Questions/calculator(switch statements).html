@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+
+	<style>
+		
+		.container {
+		    display: flex;
+		    justify-content: center;
+		    align-content: center;	
+		}
+
+		.box {
+			background-color: #8140a1;
+			padding: 20px 30px 50px 30px;
+			color: white;
+			font-family: Montserrat;
+			text-align: center;
+			justify-content: center;
+			align-self: center;
+			margin-top: 180px;
+		}
+
+		.box h1 {
+			font-weight: normal;
+		}
+
+		#fnum {
+			width: 150px;
+			height: 40px;
+			text-align: center;
+		}
+
+		#snum {
+			width: 150px;
+			height: 40px;
+			text-align: center;
+		}
+
+		#oparators {
+			height: 40px;
+		}
+
+		#result {
+			width: 100%;
+			height: 40px;
+			text-align: center;
+		}
+
+		.btn {
+			background-color: #ae70c7;
+			color: #FFFFFF;
+			border: none;
+			width: 100%;
+			height: 30px;
+			border-radius: 5px;
+			font-weight: normal;
+			font-size: 13px;
+		}
+
+		.btn:hover {
+			background-color: transparent;
+			border: 1px #ae70c7 solid;
+			transition: .5s;
+		}
+
+		::placeholder {
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+
+	<div class="box">
+
+	<h1>Calculator</h1>
+
+	<input type="number" name="fnum" id="fnum" placeholder="Enter a number">
+
+	<select id="oparators">
+		<option value="+"><b>+</b></option>
+		<option value="-"><b>-</b></option>
+		<option value="*"><b>x</b></option>
+		<option value="/"><b>/</b></option>
+	</select>
+
+	<input type="number" name="snum" id="snum" placeholder="Enter a number">
+
+	<br><br>
+
+	<button onclick="myfunction()" class="btn">Result</button>
+
+	<br><br>
+
+	<input type="text" name="result" id="result" readonly placeholder="Result">
+
+	</div>
+
+	</div>
+
+	<!-- JavaScript Starts here --> 
+
+	<script>
+		
+		function myfunction() {
+
+			let x = Number(document.getElementById('fnum').value);
+
+			let y = Number(document.getElementById('snum').value);
+
+			let op = document.getElementById('oparators').value;
+
+			let res;
+
+          
+
+			switch (op) {
+
+			case "+":
+				res = x + y;
+				break;
+
+			case "-":
+				res = x - y;
+				break;
+
+			case "*":
+				res = x * y;
+				break;
+
+			case "/":
+				res = x / y;
+				break;
+			}
+
+			document.getElementById('result').value = res;
+		}
+
+	</script>
+
+</body>
+</html>
