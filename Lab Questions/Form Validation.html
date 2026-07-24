@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form Validation</title>
+
+	<style>
+		
+		.container {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+		}
+
+		.box {
+			background-color: #f4f4f4;
+			padding: 10px 50px 50px 50px;
+			margin-top: 100px;
+			border-radius: 10px;
+		}
+
+		.box h1 {
+			font-family: Montserrat;
+			font-weight: normal;
+			color: #000000;
+			text-align: center;
+		}
+
+		.box input {
+			width: 250px;
+			height: 25px;
+			border: 1.5px solid #ccc;
+			border-radius: 5px;
+		}
+
+		::placeholder {
+			outline: none;
+		}
+
+		#btn {
+			width: 100%;
+			border: none;
+			background-color: #4CAF50;
+			padding: 8px;
+			border-radius: 5px;
+			color: white;
+		}
+
+		#btn:hover {
+			background-color: #45a049;
+			transition: .5s;
+		}
+
+		.error {
+			color: red;
+			font-size: 12px;
+			font-family: Montserrat;
+			font-weight: normal;
+			margin-bottom: 20px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="box">
+
+			<h1>Signup</h1>
+
+			<form id="form" onsubmit="return signup()">
+				
+				<input type="text" name="name" id="name" placeholder= "Enter Your Name">
+				<div id="nameerror" class="error"></div>
+
+				
+				<input type="email" name="email" id="email" placeholder="Enter Email Address">
+				<div id="emailerror" class="error"></div>
+				
+
+				<input type="text" name="phone" id="phone" placeholder="Enter Phone Number">
+				<div id="phoneerror" class="error"></div>
+
+
+				<input type="password" name="Password" id="password" placeholder="Enter a Strong Password">
+				<div id="passworderror" class="error"></div>
+
+
+				<button type="submit" id="btn" >Sign up</button>
+
+			</form>
+			
+		</div>
+
+	</div>
+
+	<script>
+		
+		function signup() {
+
+			let name = document.getElementById('name').value.trim(); // trim() used for remove white spaces
+			let mail = document.getElementById('email').value;
+			let ph = document.getElementById('phone').value.trim();
+			let pwd = document.getElementById('password').value.trim();
+
+
+			// error
+
+
+			let nameerr = document.getElementById('nameerror');
+			let mailerr = document.getElementById('emailerror');
+			let pherr = document.getElementById('phoneerror');
+			let pwderr = document.getElementById('passworderror');
+
+
+			// reset 
+
+
+			nameerr.textContent = "";         // Adds plain text only (safe, no HTML will be parsed).
+			mailerr.textContent = "";
+			pherr.textContent = "";
+			pwderr.textContent = "";
+
+
+			let isValid = true;
+
+
+			// name validation
+
+
+			if (name === "") {
+				nameerr.textContent = "*Name is required";
+				isValid = false;
+			}
+			else if (name.length < 3) {
+				nameerr.textContent = "*Name must need 3 characters";
+				isValid = false;
+			}
+			else if(/\d/.test(name)) {
+				nameerr.textContent = "*Name Should not contain any numbers";
+				isValid = false;
+			}
+
+
+			// Email validation
+
+			let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+			if (mail === "") {
+				mailerr.textContent = "*Email is required";
+				isValid = false;
+			}
+			else if (!emailPattern.test(mail)) {
+			 	mailerr.textContent = "*Enter a valid email"
+			 	isValid = false;
+			}
+
+
+			// Phone Validation 
+
+
+			if (ph === "") {
+				pherr.textContent = "*Phone number is required";
+				isValid = false;
+			}
+			else if (ph.length < 10) {
+				pherr.textContent = "*Phone should be minimum 10 numbers";
+				isValid = false;
+			}
+			else if (/\d/.test(phone)) {
+				pherr.textContent = "*Enter a valid phone number";
+				isValid = false;
+			}
+
+
+			// password validation
+
+
+			if (pwd === "") {
+				pwderr.textContent = "*Password is required";
+				isValid = false;
+			}
+			else if (pwd.length < 6) {
+				pwderr.textContent = "*Password should be minimum 6 character";
+				isValid = false; 
+			}
+
+
+			return isValid;  // form will submit only if true
+
+		}
+
+	</script>
+
+</body>
+</html>
+
+
+
+<!-- Form Validation
+Create a signup for having name,email,phone and password fields
+1. All the fields are required
+2. Name should be minimum 3 character in length and should not contain any numbers
+3. Email should be in valid format
+4. Phone should be minimum 10 numbers in length
+5. Password should be minimum 6 character in length
+Note: don't use html validations -->
