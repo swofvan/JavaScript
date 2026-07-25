@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>array within an array</title>
+</head>
+<body>
+
+	<p id="a"></p>
+	<p id="b"></p>
+	<p id="c"></p>
+	<p id="d"></p>
+
+	<script>
+		
+		var colors = [ ["1","Red"], ["2", "Green"],["3", "Blue"], ["4","Yellow"],["5","Orange"]];
+
+		document.getElementById('a').innerHTML = "Print full array = " + colors;
+		document.getElementById('b').innerHTML = "Print first element array = " + colors[0];
+		document.getElementById('c').innerHTML = "Print 0th value of second element array = " + colors[1][0];
+		document.getElementById('d').innerHTML = "Print 1st value of first element array = " + colors[0][1];
+
+
+	</script>
+
+</body>
+</html>
