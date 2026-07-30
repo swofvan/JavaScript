@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Print Pattern</title>
+</head>
+<body>
+
+	<p id="a" style="text-align: center; "></p>
+	
+
+	<script>
+		
+		let input = prompt("Enter Input Number");
+
+		var out = "";
+
+		var len = input.length;
+
+		printPattern(input);
+
+		function printPattern(input) {
+
+			for (var i = 0; i < len; i++) {
+
+				 for (var j = 0; j < input[i]; j++) {
+
+				 	out += "*";
+
+				 	}
+
+				 	out += "<br>";
+			}
+
+			document.getElementById('a').innerHTML = out;
+			
+		};
+
+	</script>
+
+</body>
+</html>
