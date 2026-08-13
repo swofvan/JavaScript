@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<p id="a"></p>
+	<p id="b"></p>
+	<p id="c"></p>
+	<p id="d"></p>
+
+	<script>
+		
+		var person = {
+			name : "Swofvan",
+			age : 20,
+			location :{
+				city : "malappuram",
+				state : "Kerala",
+			}
+		};
+
+		document.getElementById('a').innerHTML = person.name;
+		// document.write(person);
+
+		console.log(person);   // full object
+		console.log(person.location);   // location object
+		console.log(person.location.city);  // city
+
+	</script>
+
+</body>
+</html>
