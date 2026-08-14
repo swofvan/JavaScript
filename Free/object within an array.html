@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>object within an array</title>
+</head>
+<body>
+
+	<p id="a"></p>
+	<p id="b"></p>
+	<p id="c"></p>
+
+	<script>
+		
+		var car = [
+			{
+				name : "BMW",
+				model : 2025
+			},
+
+			{
+				name : "Audi",
+				model : 2023
+			},
+
+			{
+				name : "Benz",
+				model : 2024
+			}
+		]
+
+		console.log(car[0]); // it will print 0th Element of arrey
+		console.log(car[0].name);  // it will print value of name[key] 0th Element of arrey;
+		console.log(car[0].model); // it will print value of model[key] 0th Element of arrey;
+
+	</script>
+
+</body>
+</html>
